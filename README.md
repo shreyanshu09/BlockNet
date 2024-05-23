@@ -2,12 +2,8 @@
     
 # Unveiling the Power of Integration: Block Diagram Summarization through Local-Global Fusion
 
-[![Paper](https://img.shields.io/badge/Paper-arxiv.2111.15664-red)](https://arxiv.org/abs/2111.15664)
-[![Conference](https://img.shields.io/badge/ECCV-2022-blue)](#how-to-cite)
+[![Conference](https://img.shields.io/badge/ACL-2024-blue)]
 [![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](#demo)
-[![Demo](https://img.shields.io/badge/Demo-Colab-orange)](#demo)
-[![PyPI](https://img.shields.io/pypi/v/donut-python?color=green&label=pip%20install%20donut-python)](https://pypi.org/project/donut-python)
-[![Downloads](https://static.pepy.tech/personalized-badge/donut-python?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/donut-python)
 
 Official Implementation of BlockNet and BD-EnKo
 
