@@ -2,7 +2,7 @@
     
 # Unveiling the Power of Integration: Block Diagram Summarization through Local-Global Fusion
 
-[![Conference](https://img.shields.io/badge/ACL-2024-blue)]
+[![Conference](https://img.shields.io/badge/ACL-2024-blue)](#how-to-cite)
 [![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](#demo)
 
 Official Implementation of BlockNet and BD-EnKo
