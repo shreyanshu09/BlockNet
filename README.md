@@ -5,16 +5,17 @@
 [![Conference](https://img.shields.io/badge/ACL-2024-blue)](#how-to-cite)
 [![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](#demo)
 
-Official Implementation of BlockNet and BD-EnKo
+Official Implementation of BlockNet and BD-EnKo Dataset
 
 </div>
 
 ## Introduction
 
-**BlockNet** is a new framework that summarizes block diagrams, working for both English and Korean. It combines detailed (local) and overall (global) information from the diagrams using a large language model (LLM). For local information, it uses an Optical Character Recognition (OCR) algorithm that breaks the task into smaller parts. For global information, it uses a transformer model trained with a large block diagram dataset, without needing OCR.
+BlockNet is an advanced framework designed to summarize block diagrams by integrating local and global information for both English and Korean languages. It employs an OCR-based algorithm that follows a divide-and-conquer principle to extract detailed local information from smaller sections of block diagrams. For global information extraction, it utilizes an OCR-free transformer architecture trained with the BD-EnKo dataset and public data, capturing the overall structure and relationships within the diagrams. By leveraging Large Language Models (LLMs), BlockNet seamlessly synthesizes these detailed and holistic insights to produce coherent and contextually accurate summaries.
 
-**Donut** 🍩, **Do**cume**n**t **u**nderstanding **t**ransformer, is a new method of document understanding that utilizes an OCR-free end-to-end Transformer model. Donut does not require off-the-shelf OCR engines/APIs, yet it shows state-of-the-art performances on various visual document understanding tasks, such as visual document classification or information extraction (a.k.a. document parsing). 
-In addition, we present **SynthDoG** 🐶, **Synth**etic **Do**cument **G**enerator, that helps the model pre-training to be flexible on various languages and domains.
+<img width="946" alt="image" src="misc/overview.png">
+
+In addition, we present **BD-EnKo** dataset, which provides a diverse and high-quality benchmark dataset in English and Korean for block diagram understanding. This dataset is created using our innovative data collection methodology, ensuring flexibility and scalability to support a wide range of applications in both languages.
 
 <img width="946" alt="image" src="misc/overview.png">
 
