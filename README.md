@@ -5,7 +5,7 @@
 [![Conference](https://img.shields.io/badge/ACL-2024-blue)](#how-to-cite)
 [![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](#demo)
 
-Official Implementation of BlockNet and BD-EnKo Dataset
+Official Implementation of BlockNet Model
 
 </div>
 
@@ -15,9 +15,7 @@ BlockNet is an advanced framework designed to summarize block diagrams by integr
 
 <img width="946" alt="image" src="misc/overview.png">
 
-In addition, we present **BD-EnKo** dataset, which provides a diverse and high-quality benchmark dataset in English and Korean for block diagram understanding. This dataset is created using our innovative data collection methodology, ensuring flexibility and scalability to support a wide range of applications in both languages.
-
-<img width="946" alt="image" src="misc/overview.png">
+The official implementation of BD-EnKo Dataset and Generator is available in this [GitHub]() repository.
 
 ## Pre-trained Models and Web Demos
 
