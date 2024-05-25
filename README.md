@@ -15,7 +15,7 @@ BlockNet is an advanced framework designed to summarize block diagrams by integr
 
 <img width="946" alt="image" src="misc/overview.png">
 
-The official implementation of BD-EnKo Dataset and Generator is available in this [GitHub]() repository.
+The official implementation of BD-EnKo Dataset and Generator is available in this [GitHub](https://github.com/shreyanshu09/BD-EnKo) repository.
 
 ## Pre-trained Models and Web Demos
 
