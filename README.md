@@ -199,11 +199,4 @@ Some important arguments:
 - `--pretrained_model_name_or_path` : string format, the model name in Hugging Face modelhub or local path.
 - `--save_path`: file path to save predictions and scores.
 
-## License
 
-```
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
-
-```
