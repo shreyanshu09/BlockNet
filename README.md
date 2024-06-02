@@ -19,21 +19,6 @@ The official implementation of BD-EnKo Dataset and Generator is available in thi
 
 ## Pre-trained Models and Web Demos
 
-Gradio web demos are available! [![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](#demo) [![Demo](https://img.shields.io/badge/Demo-Colab-orange)](#demo)
-|:--:|
-|![image](misc/screenshot_gradio_demos.png)|
-- You can run the demo with `./app.py` file.
-- Sample images are available at `./misc` and more receipt images are available at [CORD dataset link](https://huggingface.co/datasets/naver-clova-ix/cord-v2).
-- Web demos are available from the links in the following table.
-- Note: We have updated the Google Colab demo (as of June 15, 2023) to ensure its proper working.
-
-|Task|Sec/Img|Score|Trained Model|<div id="demo">Demo</div>|
-|---|---|---|---|---|
-| [CORD](https://github.com/clovaai/cord) (Document Parsing)   |   0.7 /<br> 0.7 /<br> 1.2   |  91.3 /<br> 91.1 /<br> 90.9    | [donut-base-finetuned-cord-v2](https://huggingface.co/naver-clova-ix/donut-base-finetuned-cord-v2/tree/official) (1280) /<br> [donut-base-finetuned-cord-v1](https://huggingface.co/naver-clova-ix/donut-base-finetuned-cord-v1/tree/official) (1280) /<br> [donut-base-finetuned-cord-v1-2560](https://huggingface.co/naver-clova-ix/donut-base-finetuned-cord-v1-2560/tree/official) | [gradio space web demo](https://huggingface.co/spaces/naver-clova-ix/donut-base-finetuned-cord-v2),<br>[google colab demo (updated at 23.06.15)](https://colab.research.google.com/drive/1NMSqoIZ_l39wyRD7yVjw2FIuU2aglzJi?usp=sharing) |
-| [Train Ticket](https://github.com/beacandler/EATEN) (Document Parsing)   |   0.6   |  98.7    | [donut-base-finetuned-zhtrainticket](https://huggingface.co/naver-clova-ix/donut-base-finetuned-zhtrainticket/tree/official) | [google colab demo (updated at 23.06.15)](https://colab.research.google.com/drive/1YJBjllahdqNktXaBlq5ugPh1BCm8OsxI?usp=sharing) |
-| [RVL-CDIP](https://www.cs.cmu.edu/~aharley/rvl-cdip) (Document Classification)     |  0.75   |   95.3      | [donut-base-finetuned-rvlcdip](https://huggingface.co/naver-clova-ix/donut-base-finetuned-rvlcdip/tree/official) | [gradio space web demo](https://huggingface.co/spaces/nielsr/donut-rvlcdip),<br>[google colab demo (updated at 23.06.15)](https://colab.research.google.com/drive/1iWOZHvao1W5xva53upcri5V6oaWT-P0O?usp=sharing) |
-| [DocVQA Task1](https://rrc.cvc.uab.es/?ch=17) (Document VQA) |  0.78       | 67.5 | [donut-base-finetuned-docvqa](https://huggingface.co/naver-clova-ix/donut-base-finetuned-docvqa/tree/official) | [gradio space web demo](https://huggingface.co/spaces/nielsr/donut-docvqa),<br>[google colab demo (updated at 23.06.15)](https://colab.research.google.com/drive/1oKieslZCulFiquequ62eMGc-ZWgay4X3?usp=sharing) |
-
 The links to the pre-trained backbones are here:
 - [`donut-base`](https://huggingface.co/naver-clova-ix/donut-base/tree/official): trained with 64 A100 GPUs (~2.5 days), number of layers (encoder: {2,2,14,2}, decoder: 4), input size 2560x1920, swin window size 10, IIT-CDIP (11M) and SynthDoG (English, Chinese, Japanese, Korean, 0.5M x 4).
 - [`donut-proto`](https://huggingface.co/naver-clova-ix/donut-proto/tree/official): (preliminary model) trained with 8 V100 GPUs (~5 days), number of layers (encoder: {2,2,18,2}, decoder: 4), input size 2048x1536, swin window size 8, and SynthDoG (English, Japanese, Korean, 0.4M x 3).
@@ -53,40 +38,24 @@ The links to the SynthDoG-generated datasets are here:
 
 To generate synthetic datasets with our SynthDoG, please see `./synthdog/README.md` and [our paper](#how-to-cite) for details.
 
-## Updates
-
-**_2023-06-15_** We have updated all Google Colab demos to ensure its proper working.<br>
-**_2022-11-14_** New version 1.0.9 is released (`pip install donut-python --upgrade`). See [1.0.9 Release Notes](https://github.com/clovaai/donut/releases/tag/1.0.9).<br>
-**_2022-08-12_** Donut 🍩 is also available at [huggingface/transformers 🤗](https://huggingface.co/docs/transformers/main/en/model_doc/donut) (contributed by [@NielsRogge](https://github.com/NielsRogge)). `donut-python` loads the pre-trained weights from the `official` branch of the model repositories. See [1.0.5 Release Notes](https://github.com/clovaai/donut/releases/tag/1.0.5).<br>
-**_2022-08-05_** A well-executed hands-on tutorial on donut 🍩 is published at [Towards Data Science](https://towardsdatascience.com/ocr-free-document-understanding-with-donut-1acfbdf099be) (written by [@estaudere](https://github.com/estaudere)).<br>
-**_2024-05-30_** First Commit, We release our code, model, and dataset.
-
 ## Software installation
 
-[![PyPI](https://img.shields.io/pypi/v/donut-python?color=green&label=pip%20install%20donut-python)](https://pypi.org/project/donut-python)
-[![Downloads](https://static.pepy.tech/personalized-badge/donut-python?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/donut-python)
-
+Clone this repository and install the dependencies:
 ```bash
-pip install donut-python
+git clone https://github.com/shreyanshu09/BlockNet.git
+cd BlockNet/
+conda create -n block_diagram python=3.9
+conda activate block_diagram
+pip install -r requirements.txt
 ```
 
-or clone this repository and install the dependencies:
-```bash
-git clone https://github.com/clovaai/donut.git
-cd donut/
-conda create -n donut_official python=3.7
-conda activate donut_official
-pip install .
-```
-
-We tested [donut-python](https://pypi.org/project/donut-python/1.0.1) == 1.0.1 with:
-- [torch](https://github.com/pytorch/pytorch) == 1.11.0+cu113 
-- [torchvision](https://github.com/pytorch/vision) == 0.12.0+cu113
-- [pytorch-lightning](https://github.com/Lightning-AI/lightning) == 1.6.4
-- [transformers](https://github.com/huggingface/transformers) == 4.11.3
+We tested with CUDA (11.8):
+- [torch](https://github.com/pytorch/pytorch) == 1.12.1 
+- [torchvision](https://github.com/pytorch/vision) == 0.13.1
+- [pytorch-lightning](https://github.com/Lightning-AI/lightning) == 2.1.3
+- [transformers](https://github.com/huggingface/transformers) == 4.21.1
 - [timm](https://github.com/rwightman/pytorch-image-models) == 0.5.4
 
-**Note**: From several reported issues, we have noticed increased challenges in configuring the testing environment for `donut-python` due to recent updates in key dependency libraries. While we are actively working on a solution, we have updated the Google Colab demo (as of June 15, 2023) to ensure its proper working. For assistance, we encourage you to refer to the following demo links: [CORD Colab Demo](https://colab.research.google.com/drive/1NMSqoIZ_l39wyRD7yVjw2FIuU2aglzJi?usp=sharing), [Train Ticket Colab Demo](https://colab.research.google.com/drive/1YJBjllahdqNktXaBlq5ugPh1BCm8OsxI?usp=sharing), [RVL-CDIP Colab Demo](https://colab.research.google.com/drive/1iWOZHvao1W5xva53upcri5V6oaWT-P0O?usp=sharing), [DocVQA Colab Demo](https://colab.research.google.com/drive/1oKieslZCulFiquequ62eMGc-ZWgay4X3?usp=sharing).
 
 ## Getting Started
 
@@ -127,27 +96,6 @@ dataset_name
   - `ground_truth` : string format (json dumped), the dictionary contains either `gt_parse` or `gt_parses`. Other fields (metadata) can be added to the dictionary but will not be used.
 - `donut` interprets all tasks as a JSON prediction problem. As a result, all `donut` model training share a same pipeline. For training and inference, the only thing to do is preparing `gt_parse` or `gt_parses` for the task in format described below.
 
-#### For Document Classification
-The `gt_parse` follows the format of `{"class" : {class_name}}`, for example, `{"class" : "scientific_report"}` or `{"class" : "presentation"}`.
-- Google colab demo is available [here](https://colab.research.google.com/drive/1xUDmLqlthx8A8rWKLMSLThZ7oeRJkDuU?usp=sharing).
-- Gradio web demo is available [here](https://huggingface.co/spaces/nielsr/donut-rvlcdip).
-
-#### For Document Information Extraction
-The `gt_parse` is a JSON object that contains full information of the document image, for example, the JSON object for a receipt may look like `{"menu" : [{"nm": "ICE BLACKCOFFEE", "cnt": "2", ...}, ...], ...}`.
-- More examples are available at [CORD dataset](https://huggingface.co/datasets/naver-clova-ix/cord-v2).
-- Google colab demo is available [here](https://colab.research.google.com/drive/1o07hty-3OQTvGnc_7lgQFLvvKQuLjqiw?usp=sharing).
-- Gradio web demo is available [here](https://huggingface.co/spaces/naver-clova-ix/donut-base-finetuned-cord-v2).
-
-#### For Document Visual Question Answering
-The `gt_parses` follows the format of `[{"question" : {question_sentence}, "answer" : {answer_candidate_1}}, {"question" : {question_sentence}, "answer" : {answer_candidate_2}}, ...]`, for example, `[{"question" : "what is the model name?", "answer" : "donut"}, {"question" : "what is the model name?", "answer" : "document understanding transformer"}]`.
-- DocVQA Task1 has multiple answers, hence `gt_parses` should be a list of dictionary that contains a pair of question and answer.
-- Google colab demo is available [here](https://colab.research.google.com/drive/1Z4WG8Wunj3HE0CERjt608ALSgSzRC9ig?usp=sharing).
-- Gradio web demo is available [here](https://huggingface.co/spaces/nielsr/donut-docvqa).
-
-#### For (Pseudo) Text Reading Task
-The `gt_parse` looks like `{"text_sequence" : "word1 word2 word3 ... "}`
-- This task is also a pre-training task of Donut model.
-- You can use our **SynthDoG** 🐶 to generate synthetic images for the text reading task with proper `gt_parse`. See `./synthdog/README.md` for details.
 
 ### Training
 
