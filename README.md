@@ -44,8 +44,8 @@ Clone this repository and install the dependencies:
 ```bash
 git clone https://github.com/shreyanshu09/BlockNet.git
 cd BlockNet/
-conda create -n block_diagram python=3.9
-conda activate block_diagram
+conda create -n blocknet python=3.9
+conda activate blocknet
 pip install -r requirements.txt
 ```
 
