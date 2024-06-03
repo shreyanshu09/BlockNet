@@ -5,7 +5,7 @@
 [![Conference](https://img.shields.io/badge/ACL-2024-blue)](#how-to-cite)
 [![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](#demo)
 
-Official Implementation of BlockNet Model
+**Official Implementation of BlockNet Model**
 
 </div>
 
@@ -23,7 +23,6 @@ The links to the pre-trained backbones are here:
 - [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection): This model is trained using an object detection model based on YOLOv5, which offers essential capabilities for detecting various objects in an image. Using the CBD, FCA, and FCB dataset, which includes annotations for different shapes and arrows in a diagram, we train the model to recognize six labels: arrow, terminator, process, decision, data, and text.
 
 - [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information): This model is trained using a transformer encoder and decoder architecture, based on the configuration specified in [Donut](https://arxiv.org/abs/2111.15664), to extract the overall summary of block diagram images. It supports both English and Korean languages. The straightforward architecture comprises a visual encoder module and a text decoder module, both based on the Transformer architecture.
-
 
 ## Datasets
 
@@ -119,6 +118,8 @@ Epoch 29: 100%|█████████████| 200/200 [01:49<00:00,  1
 
 
 ### Inference
+
+Download the pre-trained models and put them in their respective folders. [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection) inside local_model/block_diagram_symbol_detection and [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information) inside global_model/block_diagram_global_information
 
 ```bash
 python test.py --dataset_name_or_path naver-clova-ix/cord-v2 --pretrained_model_name_or_path ./result/train_cord/test_experiment --save_path ./result/output.json
