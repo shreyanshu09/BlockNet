@@ -20,23 +20,21 @@ The official implementation of BD-EnKo Dataset and Generator is available in thi
 ## Pre-trained Models and Web Demos
 
 The links to the pre-trained backbones are here:
-- [`donut-base`](https://huggingface.co/naver-clova-ix/donut-base/tree/official): trained with 64 A100 GPUs (~2.5 days), number of layers (encoder: {2,2,14,2}, decoder: 4), input size 2560x1920, swin window size 10, IIT-CDIP (11M) and SynthDoG (English, Chinese, Japanese, Korean, 0.5M x 4).
-- [`donut-proto`](https://huggingface.co/naver-clova-ix/donut-proto/tree/official): (preliminary model) trained with 8 V100 GPUs (~5 days), number of layers (encoder: {2,2,18,2}, decoder: 4), input size 2048x1536, swin window size 8, and SynthDoG (English, Japanese, Korean, 0.4M x 3).
+- [`symbol_detection`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection): This model is trained using an object detection model based on YOLOv5, which offers essential capabilities for detecting various objects in an image. Using the CBD, FCA, and FCB dataset, which includes annotations for different shapes and arrows in a diagram, we train the model to recognize six labels: arrow, terminator, process, decision, data, and text.
 
-Please see [our paper](#how-to-cite) for more details.
+- [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information): This model is trained using a transformer encoder and decoder architecture, based on the configuration specified in [Donut](https://arxiv.org/abs/2111.15664), to extract the overall summary of block diagram images. It supports both English and Korean languages. The straightforward architecture comprises a visual encoder module and a text decoder module, both based on the Transformer architecture.
 
-## SynthDoG datasets
+
+## Datasets
 
 ![image](misc/sample_synthdog.png)
 
-The links to the SynthDoG-generated datasets are here:
+The links to the datasets are here:
 
-- [`synthdog-en`](https://huggingface.co/datasets/naver-clova-ix/synthdog-en): English, 0.5M.
-- [`synthdog-zh`](https://huggingface.co/datasets/naver-clova-ix/synthdog-zh): Chinese, 0.5M.
-- [`synthdog-ja`](https://huggingface.co/datasets/naver-clova-ix/synthdog-ja): Japanese, 0.5M.
-- [`synthdog-ko`](https://huggingface.co/datasets/naver-clova-ix/synthdog-ko): Korean, 0.5M.
+- [`BD-EnKo`](https://huggingface.co/datasets/shreyanshu09/BD-EnKo): 83,394 samples.
+- [`Complete Dataset`](https://huggingface.co/datasets/shreyanshu09/Block_Diagram): 84,925 samples.
 
-To generate synthetic datasets with our SynthDoG, please see `./synthdog/README.md` and [our paper](#how-to-cite) for details.
+To generate synthetic datasets with our method, please check [here](https://github.com/shreyanshu09/BD-EnKo) for details.
 
 ## Software installation
 
@@ -85,17 +83,15 @@ dataset_name
               .
 
 > cat dataset_name/test/metadata.jsonl
-{"file_name": {image_path0}, "ground_truth": "{\"gt_parse\": {ground_truth_parse}, ... {other_metadata_not_used} ... }"}
-{"file_name": {image_path1}, "ground_truth": "{\"gt_parse\": {ground_truth_parse}, ... {other_metadata_not_used} ... }"}
+{"file_name": {image_path0}, "ground_truth": "{\"gt_parse\": {\"c2t\": \"{ground_truth_parse}\"}}"}
+{"file_name": {image_path1}, "ground_truth": "{\"gt_parse\": {\"c2t\": \"{ground_truth_parse}\"}}"}
      .
      .
 ```
 
 - The structure of `metadata.jsonl` file is in [JSON Lines text format](https://jsonlines.org), i.e., `.jsonl`. Each line consists of
   - `file_name` : relative path to the image file.
-  - `ground_truth` : string format (json dumped), the dictionary contains either `gt_parse` or `gt_parses`. Other fields (metadata) can be added to the dictionary but will not be used.
-- `donut` interprets all tasks as a JSON prediction problem. As a result, all `donut` model training share a same pipeline. For training and inference, the only thing to do is preparing `gt_parse` or `gt_parses` for the task in format described below.
-
+  - `ground_truth` : string format (json dumped), the dictionary contains `gt_parse`.
 
 ### Training
 
@@ -121,29 +117,14 @@ Normed ED: 0.039603960396039604
 Epoch 29: 100%|█████████████| 200/200 [01:49<00:00,  1.82it/s, loss=0.00327, exp_name=train_cord, exp_version=test_experiment]
 ```
 
-Some important arguments:
 
-- `--config` : config file path for model training.
-- `--pretrained_model_name_or_path` : string format, model name in Hugging Face modelhub or local path.
-- `--dataset_name_or_paths` : string format (json dumped), list of dataset names in Hugging Face datasets or local paths.
-- `--result_path` : file path to save model outputs/artifacts.
-- `--exp_version` : used for experiment versioning. The output files are saved at `{result_path}/{exp_version}/*`
-
-### Test
-
-With the trained model, test images and ground truth parses, you can get inference results and accuracy scores.
+### Inference
 
 ```bash
 python test.py --dataset_name_or_path naver-clova-ix/cord-v2 --pretrained_model_name_or_path ./result/train_cord/test_experiment --save_path ./result/output.json
 100%|█████████████| 100/100 [00:35<00:00,  2.80it/s]
 Total number of samples: 100, Tree Edit Distance (TED) based accuracy score: 0.9129639764131697, F1 accuracy score: 0.8406020841373987
 ```
-
-Some important arguments:
-
-- `--dataset_name_or_path` : string format, the target dataset name in Hugging Face datasets or local path.
-- `--pretrained_model_name_or_path` : string format, the model name in Hugging Face modelhub or local path.
-- `--save_path`: file path to save predictions and scores.
 
 
 ## License
