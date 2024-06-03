@@ -27,7 +27,7 @@ The links to the pre-trained backbones are here:
 
 ## Datasets
 
-![image](misc/sample_synthdog.png)
+![image](misc/data_sample.JPG)
 
 The links to the datasets are here:
 
