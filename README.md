@@ -119,7 +119,7 @@ Epoch 29: 100%|█████████████| 200/200 [01:49<00:00,  1
 
 ### Inference
 
-Download the pre-trained models and put them in their respective folders. [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection) inside local_model/block_diagram_symbol_detection and [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information) inside global_model/block_diagram_global_information
+Download the pre-trained models and put them in their respective folders. [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection) inside "local_model/block_diagram_symbol_detection" and [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information) inside "global_model/block_diagram_global_information".
 
 ```bash
 python test.py --dataset_name_or_path naver-clova-ix/cord-v2 --pretrained_model_name_or_path ./result/train_cord/test_experiment --save_path ./result/output.json
