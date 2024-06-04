@@ -17,7 +17,7 @@ BlockNet is an advanced framework designed to summarize block diagrams by integr
 
 The official implementation of BD-EnKo Dataset and Generator is available in this [GitHub](https://github.com/shreyanshu09/BD-EnKo) repository.
 
-## Pre-trained Models and Web Demos
+## Pre-trained Models
 
 The links to the pre-trained backbones are here:
 - [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection): This model is trained using an object detection model based on YOLOv5, which offers essential capabilities for detecting various objects in an image. Using the CBD, FCA, and FCB dataset, which includes annotations for different shapes and arrows in a diagram, we train the model to recognize six labels: arrow, terminator, process, decision, data, and text.
