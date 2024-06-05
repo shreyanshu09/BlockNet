@@ -124,11 +124,11 @@ Download the pre-trained models and place them in their respective folders:
 
 There are different ways to run the models:
 
-1. **Python file (py)**:
+1. **Python file (.py)**:
    - Change the paths in `main.py`
    - Run the script: `python main.py`
 
-2. **Jupyter Notebook (ipynb)**:
+2. **Jupyter Notebook (.ipynb)**:
    - The `all_in_one.ipynb` file contains all the code within a single Jupyter notebook.
    - Simply change all the paths and run the cells.
 
