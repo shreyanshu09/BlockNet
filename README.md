@@ -107,8 +107,13 @@ Download the pre-trained models and place them in their respective folders:
 There are different ways to run the models:
 
 1. **Python file (.py)**:
-   - Change the paths in `main.py`
-   - Run the script: `python main.py`
+   - Run below command with the necessary arguments
+
+     ```bash
+        python main.py image.png --task "Short Description" \
+                --lang Korean \
+                --api_key "YOUR_API_KEY_HERE"
+     ```
 
 2. **Jupyter Notebook (.ipynb)**:
    - The `all_in_one.ipynb` file contains all the code within a single Jupyter notebook and allows for testing within the notebook.
