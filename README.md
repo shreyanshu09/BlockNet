@@ -6,7 +6,6 @@
 [![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](#demo)
 
 **Official Implementation of BlockNet Model**
-
 </div>
 
 ## Introduction
@@ -17,8 +16,6 @@ BlockNet is an advanced framework designed to summarize block diagrams by integr
   <img src="misc/blocknet.png" alt="blocknet" />
 </p>
 
-### The official implementation of BD-EnKo Dataset and Generator is available in this [GitHub](https://github.com/shreyanshu09/BD-EnKo) repository.
-
 ## Pre-trained Models
 
 The links to the pre-trained backbones are here:
@@ -27,6 +24,9 @@ The links to the pre-trained backbones are here:
 - [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information): This model is trained using a transformer encoder and decoder architecture, based on the configuration specified in [Donut](https://arxiv.org/abs/2111.15664), to extract the overall summary of block diagram images. It supports both English and Korean languages. The straightforward architecture comprises a visual encoder module and a text decoder module, both based on the Transformer architecture.
 
 ## Datasets
+
+The official implementation of BD-EnKo Dataset and Generator is available in this [GitHub](https://github.com/shreyanshu09/BD-EnKo) repository.
+
 
 <p align="center">
   <img src="misc/dataset_sample.png" alt="dataset_sample" />
