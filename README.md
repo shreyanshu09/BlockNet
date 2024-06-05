@@ -133,8 +133,7 @@ There are different ways to run the models:
    - Simply change all the paths and run the cells.
 
 3. **Gradio App**:
-   - First, download both models and place them in their respective folders.
-   - Second, open the `app.ipynb` or `app.py` file and update the file paths.
+   - Open the `app.ipynb` or `app.py` file and update the file paths.
    - Finally, run all the cells.
 
 
