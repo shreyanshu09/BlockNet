@@ -120,11 +120,11 @@ Epoch 29: 100%|█████████████| 200/200 [01:49<00:00,  1
 
 Download the pre-trained models and put them in their respective folders. [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection) inside "local_model/block_diagram_symbol_detection" and [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information) inside "global_model/block_diagram_global_information".
 
-```bash
-python test.py --dataset_name_or_path naver-clova-ix/cord-v2 --pretrained_model_name_or_path ./result/train_cord/test_experiment --save_path ./result/output.json
-100%|█████████████| 100/100 [00:35<00:00,  2.80it/s]
-Total number of samples: 100, Tree Edit Distance (TED) based accuracy score: 0.9129639764131697, F1 accuracy score: 0.8406020841373987
-```
+There are different ways to run it:
+
+`Gradio App`: First, download both models and place them in their respective folders. Second, open the main.ipynb file and update the file paths. Finally, run all the cells.
+
+`Jyupter Notebook (ipynb)`:
 
 
 
