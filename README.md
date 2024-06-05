@@ -131,7 +131,7 @@ There are different ways to run the models:
    - Run the script: `python main.py`
 
 2. **Jupyter Notebook (.ipynb)**:
-   - The `all_in_one.ipynb` file contains all the code within a single Jupyter notebook.
+   - The `all_in_one.ipynb` file contains all the code within a single Jupyter notebook and allows for testing within the notebook.
    - Simply change all the paths and run the cells.
 
 3. **Gradio App**:
