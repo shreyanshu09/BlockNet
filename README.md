@@ -28,7 +28,9 @@ The links to the pre-trained backbones are here:
 
 ## Datasets
 
-![image](misc/)
+<p align="center">
+  <img src="misc/dataset_sample.png" alt="dataset_sample" />
+</p>
 
 The links to the datasets are here:
 
