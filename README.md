@@ -118,14 +118,24 @@ Epoch 29: 100%|█████████████| 200/200 [01:49<00:00,  1
 
 ### Inference
 
-Download the pre-trained models and put them in their respective folders. [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection) inside "local_model/block_diagram_symbol_detection" and [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information) inside "global_model/block_diagram_global_information".
+Download the pre-trained models and place them in their respective folders:
+- [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection) inside `local_model/block_diagram_symbol_detection`
+- [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information) inside `global_model/block_diagram_global_information`
 
-There are different ways to run it:
+There are different ways to run the models:
 
-`Gradio App`: First, download both models and place them in their respective folders. Second, open the main.ipynb file and update the file paths. Finally, run all the cells.
+1. **Python file (py)**:
+   - Change the paths in `main.py`
+   - Run the script: `python main.py`
 
-`Jyupter Notebook (ipynb)`:
+2. **Jupyter Notebook (ipynb)**:
+   - The `all_in_one.ipynb` file contains all the code within a single Jupyter notebook.
+   - Simply change all the paths and run the cells.
 
+3. **Gradio App**:
+   - First, download both models and place them in their respective folders.
+   - Second, open the `app.ipynb` or `app.py` file and update the file paths.
+   - Finally, run all the cells.
 
 
 ## Contact
