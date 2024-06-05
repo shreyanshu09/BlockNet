@@ -25,6 +25,8 @@ The links to the pre-trained backbones are here:
 
 ## Datasets
 
+Sample data from the BD-EnKo dataset is available [here]().
+
 The official implementation of BD-EnKo Dataset and Generator is available in this [GitHub](https://github.com/shreyanshu09/BD-EnKo) repository.
 
 
