@@ -117,7 +117,7 @@ There are different ways to run the models:
 3. **Gradio App**:
    - Open the `app.ipynb` or `app.py` file and update the file paths.
    - Finally, run all the cells.
-
+   - 
 
 ## Contact
 
