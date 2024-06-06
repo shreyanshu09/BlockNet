@@ -119,7 +119,7 @@ There are different ways to run the models:
    - The `all_in_one.ipynb` file contains all the code within a single Jupyter notebook and allows for testing within the notebook.
    - Simply change all the paths and run the cells.
 
-3. **[Gradio App](https://github.com/shreyanshu09/BlockNet/blob/main/app.py)(#demo)**:
+3. **Gradio App**:
    - Open the `app.ipynb` or `app.py` file and update the file paths.
    - Finally, run all the cells.
     
