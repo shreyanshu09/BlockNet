@@ -132,3 +132,5 @@ If you have any questions about this work, please contact **[Shreyanshu Bhushan]
 ## License
 
 The content of this project itself is licensed under the [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+The BD-EnKo dataset is indeed licensed under the [MIT License](https://mit-license.org/). 
