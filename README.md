@@ -106,7 +106,16 @@ Download the pre-trained models and place them in their respective folders:
 
 There are different ways to run the models:
 
-1. **Python file (.py)**:
+
+1. **Jupyter Notebook (.ipynb)**:
+   - The `all_in_one.ipynb` file contains all the code within a single Jupyter notebook and allows for testing within the notebook.
+   - Simply change all the paths and run the cells.
+
+2. **Gradio App**:
+   - Open the `app.ipynb` or `app.py` file and update the file paths.
+   - Run all the cells.
+
+3. **Python file (.py)**:
    - To run the script, execute the following command in your terminal:
 
         ```bash
@@ -114,14 +123,6 @@ There are different ways to run the models:
                 --lang Korean \
                 --api_key "YOUR_API_KEY_HERE"
         ```
-
-2. **Jupyter Notebook (.ipynb)**:
-   - The `all_in_one.ipynb` file contains all the code within a single Jupyter notebook and allows for testing within the notebook.
-   - Simply change all the paths and run the cells.
-
-3. **Gradio App**:
-   - Open the `app.ipynb` or `app.py` file and update the file paths.
-   - Finally, run all the cells.
     
 
 ## Contact
