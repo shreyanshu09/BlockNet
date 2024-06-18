@@ -25,20 +25,29 @@ class MainController:
     def process_image(self, image_path, task="Short Description", lang="Korean", question=None):
         input_image = Image.open(image_path)
         img = np.array(input_image)
+
+        # OCR
         ocr_output = self.ocr.pororo_ocr(img)
+        
+        # Calling global model
         global_model_output = self.global_model.process_image(input_image)
+
+        # Processing Local model result
         txt_data_labels = self.local_model.process_image(image_path, stride=0, names=[], pt=False)
         img = np.array(input_image)
         edge, node = self.local_model.read_list(txt_data_labels, img)
         crop_image_result = self.local_model.find_closest_node(edge, node)
         json_result = {'results': crop_image_result}
         local_model_output, ocr_output = self.local_model.process_json_file(img, json_result)
+        
+        # Encoding image
         img_rgb = cv2.cvtColor(input_image, cv2.COLOR_BGR2RGB)
         pil_image2 = Image.fromarray(np.uint8(img_rgb))
         image_bytes = io.BytesIO()
         pil_image2.save(image_bytes, format='JPEG')
         image_data = image_bytes.getvalue()
         encode_image = base64.b64encode(image_data).decode('utf-8')
+        
         if task == "Short QA":
             final_result = self.integration_gpt4.answer_question(self.api_key, encode_image, local_model_output, global_model_output, ocr_output, lang, question, todo='very shortly')
         elif task == "Long QA":
