@@ -43,6 +43,7 @@ To generate synthetic datasets with our method, please check [here](https://gith
 
 ## Software installation
 
+### Method 1
 Clone this repository and install the dependencies:
 ```bash
 git clone https://github.com/shreyanshu09/BlockNet.git
@@ -59,6 +60,27 @@ We tested with CUDA (11.8):
 - [transformers](https://github.com/huggingface/transformers) == 4.21.1
 - [timm](https://github.com/rwightman/pytorch-image-models) == 0.5.4
 
+
+### Method 2
+
+Simply follow below steps:
+```bash
+conda create --name blocknet python=3.10 -y
+conda activate blocknet
+conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install Pillow==10.1.0
+pip install openai
+pip install chardet
+git clone -b 1.0.7 https://github.com/clovaai/donut.git
+pip install timm==0.5.4
+pip install transformers==4.21.3
+pip install opencv-python
+pip install matplotlib
+pip install seaborn
+pip install wget
+pip install scikit-image
+pip install gradio
+```
 
 ## Getting Started
 
