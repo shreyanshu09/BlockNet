@@ -43,7 +43,7 @@ To generate synthetic datasets with our method, please check [here](https://gith
 
 ## Software Installation
 
-### Method 1: With Newer Version of Torch
+### Method 1: With Newer Version of Torch [Recommended]
 
 Follow these steps to set up your environment with a newer version of PyTorch:
 
