@@ -9,7 +9,7 @@ api_key = 'api_key'
 # Global Model variables
 global_model_path = 'global_model/block_diagram_global_information'
 empty_folder = 'global_model/block_diagram_global_information/dataset/c2t_data/'    # create an empty folder
-global_limit_token = 500
+global_limit_token = 300
 
 # OCR Variable
 pororo_path = 'ocr_pororo'
