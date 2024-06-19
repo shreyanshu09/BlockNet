@@ -41,46 +41,80 @@ The links to the datasets are here:
 
 To generate synthetic datasets with our method, please check [here](https://github.com/shreyanshu09/BD-EnKo) for details.
 
-## Software installation
+## Software Installation
 
-### Method 1
-Clone this repository and install the dependencies:
-```bash
-git clone https://github.com/shreyanshu09/BlockNet.git
-cd BlockNet/
-conda create -n blocknet python=3.9
-conda activate blocknet
-pip install -r requirements.txt
-```
+### Method 1: With Newer Version of Torch
 
-We tested with CUDA (11.8):
-- [torch](https://github.com/pytorch/pytorch) == 1.12.1 
-- [torchvision](https://github.com/pytorch/vision) == 0.13.1
-- [pytorch-lightning](https://github.com/Lightning-AI/lightning) == 2.1.3
-- [transformers](https://github.com/huggingface/transformers) == 4.21.1
-- [timm](https://github.com/rwightman/pytorch-image-models) == 0.5.4
+Follow these steps to set up your environment with a newer version of PyTorch:
 
+1. **Create and activate a new Conda environment:**
+    ```bash
+    conda create --name blocknet python=3.10 -y
+    conda activate blocknet
+    ```
 
-### Method 2
+2. **Install PyTorch and dependencies:**
+    ```bash
+    conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+    ```
 
-Simply follow below steps:
-```bash
-conda create --name blocknet python=3.10 -y
-conda activate blocknet
-conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia
-pip install Pillow==10.1.0
-pip install openai
-pip install chardet
-git clone -b 1.0.7 https://github.com/clovaai/donut.git
-pip install timm==0.5.4
-pip install transformers==4.21.3
-pip install opencv-python
-pip install matplotlib
-pip install seaborn
-pip install wget
-pip install scikit-image
-pip install gradio
-```
+3. **Install additional Python packages:**
+    ```bash
+    pip install Pillow==10.1.0
+    pip install openai
+    pip install chardet
+    ```
+
+4. **Clone the Donut repository and install dependencies:**
+    ```bash
+    git clone -b 1.0.7 https://github.com/clovaai/donut.git
+    pip install timm==0.5.4
+    pip install transformers==4.21.3
+    ```
+
+5. **Install additional utilities:**
+    ```bash
+    pip install opencv-python
+    pip install matplotlib
+    pip install seaborn
+    pip install wget
+    pip install scikit-image
+    pip install gradio
+    ```
+
+### Method 2: With Older Version of Torch
+
+To set up your environment with an older version of PyTorch, follow these steps:
+
+1. **Clone the BlockNet repository:**
+    ```bash
+    git clone https://github.com/shreyanshu09/BlockNet.git
+    cd BlockNet/
+    ```
+
+2. **Create and activate a new Conda environment:**
+    ```bash
+    conda create -n blocknet python=3.9
+    conda activate blocknet
+    ```
+
+3. **Install dependencies from `requirements.txt`:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Dependencies versions tested with CUDA 11.8:**
+    - [torch](https://github.com/pytorch/pytorch) == 1.12.1 
+    - [torchvision](https://github.com/pytorch/vision) == 0.13.1
+    - [pytorch-lightning](https://github.com/Lightning-AI/lightning) == 2.1.3
+    - [transformers](https://github.com/huggingface/transformers) == 4.21.1
+    - [timm](https://github.com/rwightman/pytorch-image-models) == 0.5.4
+
+---
+
+Feel free to choose the method that best suits your requirements. If you encounter any issues, please consult the [official documentation](https://github.com/pytorch/pytorch) or raise an issue on the respective GitHub repositories.
+
+---
 
 ## Getting Started
 
