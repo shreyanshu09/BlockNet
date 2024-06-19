@@ -513,7 +513,7 @@ def get_image_list(horizontal_list: list,
         crop_img = cv2.resize(
             transformed_img,
             (int(model_height * ratio), model_height),
-            interpolation=Image.ANTIALIAS,
+            interpolation=Image.LANCZOS,
         )
         # box : [[x1,y1],[x2,y2],[x3,y3],[x4,y4]]
         image_list.append((box, crop_img))
@@ -533,7 +533,7 @@ def get_image_list(horizontal_list: list,
         crop_img = cv2.resize(
             crop_img,
             (int(model_height * ratio), model_height),
-            interpolation=Image.ANTIALIAS,
+            interpolation=Image.LANCZOS,
         )
         image_list.append((
             [
