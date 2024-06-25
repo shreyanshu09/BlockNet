@@ -13,7 +13,7 @@
 BlockNet is an advanced framework designed to summarize block diagrams by integrating local and global information for both English and Korean languages. It employs an OCR-based algorithm that follows a divide-and-conquer principle to extract detailed local information from smaller sections of block diagrams. For global information extraction, it utilizes an OCR-free transformer architecture trained with the BD-EnKo dataset and public data, capturing the overall structure and relationships within the diagrams. By leveraging Large Language Models (LLMs), BlockNet seamlessly synthesizes these detailed and holistic insights to produce coherent and contextually accurate summaries.
 
 <p align="center">
-  <img src="misc/blocknet.png" alt="blocknet" />
+  <img src="misc/blocknet.png" alt="blocknet" width="750" height="500" />
 </p>
 
 ## Pre-trained Models
