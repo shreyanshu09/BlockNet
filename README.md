@@ -8,7 +8,7 @@
 **Official Implementation of BlockNet Model**
 </div>
 
-## Introduction
+## 👋 Introduction
 
 BlockNet is an advanced framework designed to summarize block diagrams by integrating local and global information for both English and Korean languages. It employs an OCR-based algorithm that follows a divide-and-conquer principle to extract detailed local information from smaller sections of block diagrams. For global information extraction, it utilizes an OCR-free transformer architecture trained with the BD-EnKo dataset and public data, capturing the overall structure and relationships within the diagrams. By leveraging Large Language Models (LLMs), BlockNet seamlessly synthesizes these detailed and holistic insights to produce coherent and contextually accurate summaries.
 
@@ -16,14 +16,14 @@ BlockNet is an advanced framework designed to summarize block diagrams by integr
   <img src="misc/blocknet.png" alt="blocknet" width="750" height="500" />
 </p>
 
-## Pre-trained Models
+## 🤖 Pre-trained Models
 
 The links to the pre-trained backbones are here:
 - [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection): This model is trained using an object detection model based on YOLOv5, which offers essential capabilities for detecting various objects in an image. Using the CBD, FCA, and FCB dataset, which includes annotations for different shapes and arrows in a diagram, we train the model to recognize six labels: arrow, terminator, process, decision, data, and text.
 
 - [`global_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_global_information): This model is trained using a transformer encoder and decoder architecture, based on the configuration specified in [Donut](https://arxiv.org/abs/2111.15664), to extract the overall summary of block diagram images. It supports both English and Korean languages. The straightforward architecture comprises a visual encoder module and a text decoder module, both based on the Transformer architecture.
 
-## Datasets
+## 📂 Datasets
 
 Sample data from the BD-EnKo dataset is available [here](https://github.com/shreyanshu09/BlockNet/tree/main/BD-EnKo_dataset_sample).
 
@@ -41,7 +41,7 @@ The links to the datasets are here:
 
 To generate synthetic datasets with our method, please check [here](https://github.com/shreyanshu09/BD-EnKo) for details.
 
-## Software Installation
+## 🛠️ Software Installation
 
 ### Method 1: With Newer Version of Torch [Recommended]
 
@@ -110,15 +110,11 @@ To set up your environment with an older version of PyTorch, follow these steps:
     - [transformers](https://github.com/huggingface/transformers) == 4.21.1
     - [timm](https://github.com/rwightman/pytorch-image-models) == 0.5.4
 
----
 
-Feel free to choose the method that best suits your requirements. If you encounter any issues, please consult the [official documentation](https://github.com/pytorch/pytorch) or raise an issue on the respective GitHub repositories.
-
----
 
 ## Getting Started
 
-### Data
+### 🗄️ Data
 
 This repository assumes the following structure of dataset:
 ```bash
@@ -149,12 +145,12 @@ dataset_name
   - `file_name` : relative path to the image file.
   - `ground_truth` : string format (json dumped), the dictionary contains `gt_parse`.
 
-### Training
+### ⚙️ Training
 
 *Coming soon*
 
 
-### Inference
+### 🚀 Inference
 
 Download the pre-trained models and place them in their respective folders:
 - [`local_information_extractor`](https://huggingface.co/shreyanshu09/block_diagram_symbol_detection) inside `local_model/block_diagram_symbol_detection`
@@ -181,12 +177,12 @@ There are different ways to run the models:
         ```
     
 
-## Contact
+## 📧 Contact
 
 If you have any questions about this work, please contact **[Shreyanshu Bhushan](https://github.com/shreyanshu09)** using the following email addresses: **shreyanshubhushan@gmail.com**.
 
 
-## License
+## 📜 License
 
 The content of this project is licensed under the [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
