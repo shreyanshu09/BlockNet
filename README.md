@@ -181,6 +181,17 @@ There are different ways to run the models:
 
 If you have any questions about this work, please contact **[Shreyanshu Bhushan](https://github.com/shreyanshu09)** using the following email addresses: **shreyanshubhushan@gmail.com**.
 
+## How to Cite
+If you find this work useful to you, please cite:
+```bibtex
+@inproceedings{bhushan2024unveiling,
+  title={Unveiling the Power of Integration: Block Diagram Summarization through Local-Global Fusion},
+  author={Bhushan, Shreyanshu and Jung, Eun-Soo and Lee, Minho},
+  booktitle={Findings of the Association for Computational Linguistics ACL 2024},
+  pages={13837--13856},
+  year={2024}
+}
+```
 
 ## 📜 License
 
